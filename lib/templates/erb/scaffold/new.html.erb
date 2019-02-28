@@ -1,0 +1,9 @@
+<div class="page-header">
+  <%%= link_to <%= index_helper %>_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Voltar
+  <%% end %>
+  <h1>Novo <%= singular_table_name %></h1>
+</div>
+
+<%%= render 'form' %>
