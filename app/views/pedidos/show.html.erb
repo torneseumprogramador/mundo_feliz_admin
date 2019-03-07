@@ -15,6 +15,16 @@
   <dd><%= @pedido.cliente.nome %></dd>
 
   <dt>Valor total:</dt>
-  <dd><%= @pedido.valor_total %></dd>
+  <dd>R$ <%= @pedido.valor_total %></dd>
+
+  <dd>
+    <ul>
+      <% @pedido.pedido_produtos.each do |pp| %>
+      <li>
+        <%= pp.produto.nome %> - Valor Unidade R$ <%= pp.valor %>
+      </li>
+      <% end %>
+    </ul>
+  </dd>
 
 </dl>
