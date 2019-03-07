@@ -1,9 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <%= link_to tipo_produtos_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Voltar
+  <% end %>
+  <%= link_to edit_tipo_produto_path(@tipo_produto), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Editar
+  <% end %>
+  <h1>Mostrar Tipo Produto</h1>
+</div>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @tipo_produto.nome %>
-</p>
-
-<%= link_to 'Edit', edit_tipo_produto_path(@tipo_produto) %> |
-<%= link_to 'Back', tipo_produtos_path %>
+<dl class="dl-horizontal">
+  <dt>Nome:</dt>
+  <dd><%= @tipo_produto.nome %></dd>
+</dl>

@@ -1,0 +1,80 @@
+<%= form_for(@cliente, html: { class: "form-horizontal", role: "form" }) do |f| %>
+  <% if @cliente.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4>Verifique os erros abaixo:</h4>
+
+      <ul>
+      <% @cliente.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :nome, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :nome, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :cpf, "CPF", class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :cpf, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :telefone, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :telefone, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :cep, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :cep, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :endereco, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :endereco, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :numero, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :numero, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :bairro, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :bairro, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :cidade, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :cidade, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :estado, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :estado, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

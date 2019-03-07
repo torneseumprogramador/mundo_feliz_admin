@@ -1,5 +1,9 @@
-<h1>New Tipo Produto</h1>
+<div class="page-header">
+  <%= link_to tipo_produtos_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Voltar
+  <% end %>
+  <h1>Novo Tipo Produto</h1>
+</div>
 
-<%= render 'form', tipo_produto: @tipo_produto %>
-
-<%= link_to 'Back', tipo_produtos_path %>
+<%= render 'form' %>

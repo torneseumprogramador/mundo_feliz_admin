@@ -21,6 +21,9 @@
   <dd><%= @produto.quantidade %></dd>
 
   <dt>Tipo produto:</dt>
-  <dd><%= @produto.tipo_produto %></dd>
+  <dd><%= @produto.tipo_produto.nome %></dd>
+
+  <dt>Valor:</dt>
+  <dd><%= "R$ #{@produto.valor}" %></dd>
 
 </dl>

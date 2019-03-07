@@ -1,27 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <%= link_to new_tipo_produto_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    Novo Tipo Produto
+  <% end %>
+  <h1>Lista Tipo Produto</h1>
+</div>
 
-<h1>Tipo Produtos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tipo_produtos.each do |tipo_produto| %>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
       <tr>
-        <td><%= tipo_produto.nome %></td>
-        <td><%= link_to 'Show', tipo_produto %></td>
-        <td><%= link_to 'Edit', edit_tipo_produto_path(tipo_produto) %></td>
-        <td><%= link_to 'Destroy', tipo_produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Nome</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Tipo Produto', new_tipo_produto_path %>
+    <tbody>
+      <%= content_tag_for(:tr, @tipo_produtos) do |tipo_produto| %>
+        <td><%= tipo_produto.nome %></td>
+        <td><%= link_to 'Mostrar', tipo_produto %></td>
+        <td><%= link_to 'Editar', edit_tipo_produto_path(tipo_produto) %></td>
+        <td><%= link_to 'Apagar', tipo_produto, method: :delete, data: { confirm: 'Confirma?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

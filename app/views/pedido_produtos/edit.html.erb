@@ -1,0 +1,13 @@
+<div class="page-header">
+  <%= link_to pedido_pedido_produtos_path(@pedido), class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Voltar
+  <% end %>
+  <%= link_to pedido_pedido_produtos_path(@pedido, @pedido_produto), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+    Mostrar
+  <% end %>
+  <h1>Editando item pedido</h1>
+</div>
+
+<%= render 'form' %>

@@ -1,0 +1,20 @@
+<div class="page-header">
+  <%= link_to pedidos_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Voltar
+  <% end %>
+  <%= link_to edit_pedido_path(@pedido), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Editar
+  <% end %>
+  <h1>Mostrar pedido</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Cliente:</dt>
+  <dd><%= @pedido.cliente.nome %></dd>
+
+  <dt>Valor total:</dt>
+  <dd><%= @pedido.valor_total %></dd>
+
+</dl>

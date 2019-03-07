@@ -10,7 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_28_031241) do
+ActiveRecord::Schema.define(version: 2019_03_07_030739) do
+
+  create_table "clientes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nome"
+    t.string "cpf"
+    t.string "telefone"
+    t.string "email"
+    t.string "cep"
+    t.string "endereco"
+    t.string "numero"
+    t.string "bairro"
+    t.string "cidade"
+    t.string "estado"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pedido_produtos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "pedido_id"
+    t.bigint "produto_id"
+    t.float "valor"
+    t.integer "quantidade"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pedido_id"], name: "index_pedido_produtos_on_pedido_id"
+    t.index ["produto_id"], name: "index_pedido_produtos_on_produto_id"
+  end
+
+  create_table "pedidos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "cliente_id"
+    t.float "valor_total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cliente_id"], name: "index_pedidos_on_cliente_id"
+  end
 
   create_table "produtos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nome"
@@ -19,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_02_28_031241) do
     t.bigint "tipo_produto_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "valor"
     t.index ["tipo_produto_id"], name: "index_produtos_on_tipo_produto_id"
   end
 
@@ -28,5 +63,8 @@ ActiveRecord::Schema.define(version: 2019_02_28_031241) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "pedido_produtos", "pedidos"
+  add_foreign_key "pedido_produtos", "produtos"
+  add_foreign_key "pedidos", "clientes"
   add_foreign_key "produtos", "tipo_produtos"
 end

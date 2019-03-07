@@ -1,13 +1,13 @@
 <div class="page-header">
-  <%= link_to tipo_produtos_path, class: 'btn btn-default' do %>
+  <%= link_to clientes_path, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Voltar
   <% end %>
-  <%= link_to @tipo_produto, class: 'btn btn-primary' do %>
+  <%= link_to @cliente, class: 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-info-sign"></span>
     Mostrar
   <% end %>
-  <h1>Editando Tipo Produto</h1>
+  <h1>Editando cliente</h1>
 </div>
 
 <%= render 'form' %>
