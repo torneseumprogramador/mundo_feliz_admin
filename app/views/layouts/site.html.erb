@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Mundo feliz admin</title>
+  <title>Mundo feliz e-commerce</title>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -27,18 +27,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= link_to "Mundo feliz admin", "/admin", class: "navbar-brand" %>
-      </div>
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li <% if params["controller"] == "home" %>class="active"<% end %>><a href="/">Home</a></li>
-          <li <% if params["controller"] == "tipo_produtos" %>class="active"<% end %>><a href="/tipo_produtos">Tipo de produtos</a></li>
-          <li <% if params["controller"] == "produtos" %>class="active"<% end %>><a href="/produtos">Produtos</a></li>
-          <li <% if params["controller"] == "clientes" %>class="active"<% end %>><a href="/clientes">Clientes</a></li>
-          <li <% if params["controller"] == "pedidos" %>class="active"<% end %>><a href="/pedidos">Pedidos</a></li>
-          <li <% if params["controller"] == "administradors" %>class="active"<% end %>><a href="/administradors">Administradores</a></li>
-          <li ><a href="/login/sair">Sair</a></li>
-        </ul>
+        <%= link_to "Mundo feliz e-commerce", "/", class: "navbar-brand" %>
       </div>
     </div>
   </nav>
