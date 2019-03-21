@@ -1,0 +1,32 @@
+<div class="row">
+
+  <div class="col-lg-12">
+      <div class="col-lg-12 col-md-6 mb-4">
+        <div class="card h-100">
+          <img class="card-img-top" src="<%= @produto.imagem %>" alt="<%= @produto.nome %>">
+          <div class="card-body">
+            <h4 class="card-title">
+              <%= @produto.nome %>
+            </h4>
+            <h5>R$<%= @produto.valor %></h5>
+            <p class="card-text">
+              <%= @produto.descricao.truncate(100) %>
+            </p>
+          </div>
+          <div class="card-footer">
+            <% if existe_carrinho?(@produto.id) %>
+              <a href="/produto/<%= @produto.id %>/remover" style="color: red">Remover carrinho</a>
+            <% else %>
+              <a href="/produto/<%= @produto.id %>/adicionar">Adicionar carrinho</a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.col-lg-9 -->
+
+</div>
+<!-- /.row -->

@@ -20,7 +20,7 @@ class ProdutosController < ApplicationController
   # GET /produtos/1/edit
   def edit
   end
-
+  
   # POST /produtos
   # POST /produtos.json
   def create
@@ -69,6 +69,6 @@ class ProdutosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def produto_params
-      params.require(:produto).permit(:nome, :descricao, :quantidade, :tipo_produto_id, :valor)
+      params.require(:produto).permit(:nome, :descricao, :quantidade, :tipo_produto_id, :valor, :imagem)
     end
 end
