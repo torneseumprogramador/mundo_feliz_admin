@@ -1,0 +1,20 @@
+<div style="text-align: center;">
+  <form method="post" action="/cliente/login" style="width: 400px; display: inline-block;" class="form-signin">
+    <h1 class="h3 mb-3 font-weight-normal">Já é cliente? Faça o seu login</h1>
+    <label for="email" class="sr-only">Email</label>
+    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required="" autofocus="">
+    <label for="senha" class="sr-only">Senha</label>
+    <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required="">
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="1" name="lembrar"> Lembrar de mim
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+  </form>
+  <hr>
+  <div style="padding-top: 30px;padding-bottom: 30px;width: 400px;display: inline-block;">
+    <h1 class="h3 mb-3 font-weight-normal">Não é cliente? Faça o seu cadastro</h1>
+    <a href="/cliente/cadastrar" class="btn btn-lg btn-primary btn-block">Cadastrar</a>
+  </div>
+</div>

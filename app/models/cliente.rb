@@ -1,3 +1,3 @@
 class Cliente < ApplicationRecord
-  validates :nome, :cpf, :telefone, :email, presence: true
+  validates :nome, :cpf, :telefone, :email, :senha, presence: true
 end
