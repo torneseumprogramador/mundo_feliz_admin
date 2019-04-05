@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   post '/cliente/criar', to: 'ecommerce#cadastrar_cliente'
   patch '/cliente/criar', to: 'ecommerce#cadastrar_cliente'
   get '/cliente/sair', to: 'ecommerce#sair'
+  post '/cliente/concluir-pagamento', to: 'ecommerce#concluir_pagamento'
 
   root to: 'home#index'
 

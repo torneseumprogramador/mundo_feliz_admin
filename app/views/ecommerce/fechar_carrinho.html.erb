@@ -11,6 +11,85 @@
     <% end %>
   </ul>
 </div>
-<div class="row">
-  <a href="/carrinho/fechar" class="btn btn-success" style="width: 100%;margin-bottom: 20px;font-size: 40px">Concluir compra</a>
+<h1>
+  Valor total: R$ <%= @produtos.sum(:valor) %>
+</h1>
+<script src="https://js.iugu.com/v2"></script>
+<div style="text-align: center;">
+
+  <h1>
+    Gerar boleto <br>
+    <a href="">
+      <img src="https://gestaoclick.com.br/site/images/funcionalidades/financeiro/boleto-bancario.png" style="width: 200px">
+    </a>
+  </h1>
+
+  <br>
+  <br>
+  <br>
+
+  <h1>
+    <a href="">
+      <img src="https://cdn.pixabay.com/photo/2016/09/16/09/21/card-1673581_960_720.png" style="width: 200px">
+    </a>
+  </h1>
+
+  <script type="text/javascript">
+    var mundofeliz ={}
+    mundofeliz.pagamentoCartao = function(){
+      var pg_id = "";
+
+      Iugu.setTestMode(true);
+      Iugu.setAccountID(pg_id);
+      Iugu.setup();
+
+
+      var number = $("#number").val()
+      var mes = $("#mes").val()
+      var ano = $("#ano").val()
+      var nome = $("#nome").val()
+      var sobrenome = $("#sobrenome").val()
+      var cvv = $("#cvv").val()
+      var cliente_id = $("#cliente_id").val()
+
+      debugger
+      cc = Iugu.CreditCard(number, mes, ano, nome, sobrenome, cvv);
+
+      // cc = Iugu.CreditCard("4111111111111111", "12", "2025", "Nome", "Sobrenome", "123");
+      
+      Iugu.createPaymentToken(cc, function(data) {
+        if (data.errors) {
+          alert("erro ao gerar");
+          console.log(data.errors);
+        } else {
+          var token = data.id;
+
+          $.post("/cliente/concluir-pagamento", {token: token, cliente_id: cliente_id}).done(function() {
+            alert( "second success" );
+          })
+          .fail(function() {
+            alert( "error" );
+          });
+
+        }
+      });
+    }
+  </script>
+
+  <fieldset>
+    <input type="hidden" id="nome" value="<%= cliente.nome_tratado %>">
+    <input type="hidden" id="sobrenome"  value="<%= cliente.sobrenome %> dos santos">
+    <input type="hidden" id="cliente_id"  value="<%= cliente.id %>">
+    <legend>Dados do cartão:</legend>
+    Número do cartão: <input type="text" id="number"><br>
+    Mes: <input type="number" id="mes"><br>
+    Ano: <input type="number" id="ano"><br>
+    CVV: <input type="number" id="cvv"><br>
+  </fieldset>
+
+  <a href="javascript:;" onclick="mundofeliz.pagamentoCartao()" class="btn btn-success" style="width: 100%;margin-bottom: 20px;font-size: 40px">Pagar com cartão</a>
+
+  <br>
+  <br>
+  <br>
 </div>
