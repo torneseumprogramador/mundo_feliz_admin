@@ -22,8 +22,13 @@ Rails.application.routes.draw do
   get '/cliente/cadastrar', to: 'ecommerce#cadastrar'
   post '/cliente/criar', to: 'ecommerce#cadastrar_cliente'
   patch '/cliente/criar', to: 'ecommerce#cadastrar_cliente'
+  get '/cliente/compra-concluida', to: 'ecommerce#compra_concluida'
+  get '/cliente/seu-boleto', to: 'ecommerce#boleto_gerado'
   get '/cliente/sair', to: 'ecommerce#sair'
   post '/cliente/concluir-pagamento', to: 'ecommerce#concluir_pagamento'
+
+  get '/cliente/pagamento', to: 'ecommerce#confirmar_pagamento'
+
 
   root to: 'home#index'
 

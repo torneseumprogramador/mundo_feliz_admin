@@ -1,0 +1,7 @@
+.pagamento label{
+  display: inline-block;
+  width: 80px;
+}
+.pagamento input{
+  width: 300px;
+}

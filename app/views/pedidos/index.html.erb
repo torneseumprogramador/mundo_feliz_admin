@@ -10,8 +10,12 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
+        <th>Status</th>
         <th>Cliente</th>
         <th>Valor total</th>
+        <th>transacao_id</th>
+        <th>numero_boleto</th>
+        <th>pdf_boleto</th>
         <th></th>
         <th></th>
         <th></th>
@@ -21,8 +25,12 @@
 
     <tbody>
       <%= content_tag_for(:tr, @pedidos) do |pedido| %>
+        <td><%= pedido.status %></td>
         <td><%= pedido.cliente.nome %></td>
         <td><%= pedido.valor_total %></td>
+        <td><%= pedido.transacao_id %></td>
+        <td><%= pedido.numero_boleto %></td>
+        <td><%= pedido.pdf_boleto %></td>
         <td><%= link_to 'Itens', pedido_pedido_produtos_path(pedido) %></td>
         <td><%= link_to 'Mostrar', pedido %></td>
         <td><%= link_to 'Editar', edit_pedido_path(pedido) %></td>

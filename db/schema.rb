@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_05_031426) do
+ActiveRecord::Schema.define(version: 2019_04_12_032010) do
 
   create_table "administradors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nome"
@@ -53,6 +53,10 @@ ActiveRecord::Schema.define(version: 2019_04_05_031426) do
     t.float "valor_total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "transacao_id"
+    t.string "numero_boleto"
+    t.string "pdf_boleto"
+    t.string "status"
     t.index ["cliente_id"], name: "index_pedidos_on_cliente_id"
   end
 
